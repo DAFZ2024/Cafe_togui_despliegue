@@ -2,53 +2,53 @@
 export const IMAGES = {
   // Imágenes Hero
   hero: {
-    main: '/images/hero/granos.png',
-    background: '/images/hero/mountains-background.jpg'
+    main: '/images/hero/granos.webp',
+    background: '/images/hero/granos.webp'
   },
 
   // Imágenes de productos
   products: {
-    clasico: '/images/products/clasico.png',
-    reserva: '/images/products/reserva.png',
-    packaging: '/images/products/packaging.jpg'
+    clasico: '/images/products/clasico.webp',
+    reserva: '/images/products/reserva.webp',
+    packaging: '/images/products/packaging.webp'
   },
 
   // Imágenes de historia/origen
   story: {
-    cafetales: '/images/process/finca2.png',
-    farmers: '/images/process/cafetal2.png',
-    landscape: '/images/story/landscape-boyaca.jpg'
+    cafetales: '/images/process/finca2.webp',
+    farmers: '/images/process/cafetal2.webp',
+    landscape: '/images/process/finca2.webp'
   },
 
   // Imágenes de proceso
   process: {
-    cultivo: '/images/process/cafetal2.png',
-    cosecha: '/images/process/recolectar.png',
-    procesamiento: '/images/process/lavado.png',
-    tostado: '/images/process/tostado.png',
-    empaque: '/images/process/reserva.png'
+    cultivo: '/images/process/cafetal2.webp',
+    cosecha: '/images/process/recolectar.webp',
+    procesamiento: '/images/process/lavado.webp',
+    tostado: '/images/process/tostado.webp',
+    empaque: '/images/products/reserva.webp'
   },
 
   // Imágenes de galería
   gallery: {
-    mountains: '/images/process/cafetal2.png',
-    harvest: '/images/process/finca1.png',
-    washing: '/images/process/lavado.png',
-    roasted: '/images/hero/granos.png',
-    cup: '/images/process/pocillo.png',
-    roasting: '/images/process/tostado.png',
-    plantation: '/images/process/finca2.png',
-    premium: '/images/products/reserva.png',
-    pourover: '/images/process/pour_over.png',
+    mountains: '/images/process/cafetal2.webp',
+    harvest: '/images/process/finca1.webp',
+    washing: '/images/process/lavado.webp',
+    roasted: '/images/hero/granos.webp',
+    cup: '/images/process/pocillo.webp',
+    roasting: '/images/process/tostado.webp',
+    plantation: '/images/process/finca2.webp',
+    premium: '/images/products/reserva.webp',
+    pourover: '/images/process/pour_over.webp'
   },
 
   // Imágenes de métodos de preparación
   preparation: {
-    pourover: '/images/process/pour_over.png',
-    french: '/images/process/prensa_francesa.png',
-    espresso: '/images/process/espresso.png',
-    aeropress: '/images/process/aeroespress.png',
-    coldBrew: '/images/process/cold_brew.png'
+    pourover: '/images/process/pour_over.webp',
+    french: '/images/process/prensa_francesa.webp',
+    espresso: '/images/process/espresso.webp',
+    aeropress: '/images/process/aeropress.webp',
+    coldBrew: '/images/process/cold_brew.webp'
   }
 };
 

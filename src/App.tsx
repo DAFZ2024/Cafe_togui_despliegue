@@ -58,21 +58,65 @@ function App() {
 }
 
 function StickyNav({ isVisible, scrollToSection }: { isVisible: boolean; scrollToSection: (id: string) => void }) {
+  const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
+
   return (
     <nav
       className={`fixed top-0 left-0 right-0 z-50 transition-all duration-500 ${
         isVisible ? 'bg-coffee-dark/95 backdrop-blur-sm translate-y-0' : '-translate-y-full'
       }`}
     >
-      <div className="max-w-7xl mx-auto px-6 py-4 flex items-center justify-between">
-        <div className="text-gold-muted font-serif text-xl tracking-wide">El Hatillo</div>
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 py-3 sm:py-4 flex items-center justify-between">
+        <div className="text-gold-muted font-serif text-lg sm:text-xl tracking-wide">El Hatillo</div>
+        
+        {/* Desktop Menu */}
         <div className="hidden md:flex gap-8 text-cream-warm text-sm tracking-wider uppercase">
           <button onClick={() => scrollToSection('story')} className="hover:text-gold-muted transition-colors">Historia</button>
           <button onClick={() => scrollToSection('product')} className="hover:text-gold-muted transition-colors">Producto</button>
           <button onClick={() => scrollToSection('process')} className="hover:text-gold-muted transition-colors">Proceso</button>
           <button onClick={() => scrollToSection('contact')} className="hover:text-gold-muted transition-colors">Contacto</button>
         </div>
+
+        {/* Mobile Menu Button */}
+        <button 
+          onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
+          className="md:hidden text-gold-muted p-2"
+        >
+          {isMobileMenuOpen ? <X className="w-6 h-6" /> : <Coffee className="w-6 h-6" />}
+        </button>
       </div>
+
+      {/* Mobile Menu */}
+      {isMobileMenuOpen && (
+        <div className="md:hidden bg-coffee-dark/98 backdrop-blur-sm border-t border-gold-muted/20">
+          <div className="px-4 py-4 flex flex-col gap-4">
+            <button 
+              onClick={() => { scrollToSection('story'); setIsMobileMenuOpen(false); }} 
+              className="text-cream-warm text-sm tracking-wider uppercase hover:text-gold-muted transition-colors text-left py-2"
+            >
+              Historia
+            </button>
+            <button 
+              onClick={() => { scrollToSection('product'); setIsMobileMenuOpen(false); }} 
+              className="text-cream-warm text-sm tracking-wider uppercase hover:text-gold-muted transition-colors text-left py-2"
+            >
+              Producto
+            </button>
+            <button 
+              onClick={() => { scrollToSection('process'); setIsMobileMenuOpen(false); }} 
+              className="text-cream-warm text-sm tracking-wider uppercase hover:text-gold-muted transition-colors text-left py-2"
+            >
+              Proceso
+            </button>
+            <button 
+              onClick={() => { scrollToSection('contact'); setIsMobileMenuOpen(false); }} 
+              className="text-cream-warm text-sm tracking-wider uppercase hover:text-gold-muted transition-colors text-left py-2"
+            >
+              Contacto
+            </button>
+          </div>
+        </div>
+      )}
     </nav>
   );
 }
@@ -89,20 +133,20 @@ function HeroSection({ scrollY, scrollToSection }: { scrollY: number; scrollToSe
       />
       <div className="absolute inset-0 bg-gradient-to-b from-black/50 via-black/40 to-black/60" />
 
-      <div className="relative h-full flex flex-col items-center justify-center text-center px-6 animate-fade-in">
-        <h1 className="font-serif text-gold-muted text-5xl md:text-7xl mb-4 tracking-wide">
+      <div className="relative h-full flex flex-col items-center justify-center text-center px-4 sm:px-6 animate-fade-in">
+        <h1 className="font-serif text-gold-muted text-4xl sm:text-5xl md:text-7xl mb-3 sm:mb-4 tracking-wide">
           El Hatillo
         </h1>
-        <p className="text-cream-warm text-lg md:text-xl mb-2 tracking-widest uppercase font-light">
+        <p className="text-cream-warm text-base sm:text-lg md:text-xl mb-2 tracking-widest uppercase font-light px-2">
           Desde las montañas de Togüi, Boyacá
         </p>
-        <p className="text-cream-warm/80 text-base md:text-lg mb-12 font-light max-w-md">
+        <p className="text-cream-warm/80 text-sm sm:text-base md:text-lg mb-8 sm:mb-12 font-light max-w-md px-4">
           Café de altura, tradición colombiana
         </p>
 
         <button
           onClick={() => scrollToSection('product')}
-          className="border-2 border-gold-muted text-gold-muted px-8 py-3 text-sm tracking-widest uppercase hover:bg-gold-muted hover:text-coffee-dark transition-all duration-500"
+          className="border-2 border-gold-muted text-gold-muted px-6 sm:px-8 py-2.5 sm:py-3 text-xs sm:text-sm tracking-widest uppercase hover:bg-gold-muted hover:text-coffee-dark transition-all duration-500"
         >
           Descubre Nuestro Café
         </button>
@@ -120,19 +164,19 @@ function HeroSection({ scrollY, scrollToSection }: { scrollY: number; scrollToSe
 
 function StorySection() {
   return (
-    <section id="story" className="py-20 md:py-28 px-6 bg-white">
-      <div className="max-w-7xl mx-auto grid md:grid-cols-2 gap-10 items-center">
+    <section id="story" className="py-16 sm:py-20 md:py-28 px-4 sm:px-6 bg-white">
+      <div className="max-w-7xl mx-auto grid md:grid-cols-2 gap-8 sm:gap-10 items-center">
         <div className="order-2 md:order-1">
-          <div className="flex items-center gap-3 mb-4">
-            <Leaf className="w-6 h-6 text-gold-muted" />
-            <span className="text-sm uppercase tracking-widest text-gold-muted font-medium">Nuestra Tierra</span>
+          <div className="flex items-center gap-2 sm:gap-3 mb-3 sm:mb-4">
+            <Leaf className="w-5 h-5 sm:w-6 sm:h-6 text-gold-muted" />
+            <span className="text-xs sm:text-sm uppercase tracking-widest text-gold-muted font-medium">Nuestra Tierra</span>
           </div>
 
-          <h2 className="font-serif text-3xl md:text-4xl text-coffee-dark mb-4 leading-tight">
+          <h2 className="font-serif text-2xl sm:text-3xl md:text-4xl text-coffee-dark mb-3 sm:mb-4 leading-tight">
             Café con Alma Boyacense
           </h2>
 
-          <p className="text-coffee-dark/90 text-lg md:text-xl font-light mb-6 max-w-prose">
+          <p className="text-coffee-dark/90 text-base sm:text-lg md:text-xl font-light mb-4 sm:mb-6 max-w-prose">
             En las alturas de Togüi, Boyacá, donde las montañas se funden con las nubes,
             nace El Hatillo: granos cultivados con dedicación por familias que conocen la
             tierra y la cuidan como legado.
@@ -235,20 +279,20 @@ function ProductSection() {
   ];
 
   return (
-    <section id="product" className="py-24 px-6 bg-coffee-dark">
+    <section id="product" className="py-16 sm:py-20 md:py-24 px-4 sm:px-6 bg-coffee-dark">
       <div className="max-w-7xl mx-auto">
-        <div className="text-center mb-16">
-          <div className="inline-flex items-center gap-3 mb-4">
-            <Coffee className="w-6 h-6 text-gold-muted" />
-            <span className="text-sm uppercase tracking-widest text-gold-muted">Selección Premium</span>
+        <div className="text-center mb-12 sm:mb-16">
+          <div className="inline-flex items-center gap-2 sm:gap-3 mb-3 sm:mb-4">
+            <Coffee className="w-5 h-5 sm:w-6 sm:h-6 text-gold-muted" />
+            <span className="text-xs sm:text-sm uppercase tracking-widest text-gold-muted">Selección Premium</span>
           </div>
-          <h2 className="font-serif text-4xl md:text-5xl text-cream-warm mb-4">Nuestros Productos</h2>
-          <p className="text-lg text-cream-warm/80 max-w-2xl mx-auto">
+          <h2 className="font-serif text-3xl sm:text-4xl md:text-5xl text-cream-warm mb-3 sm:mb-4 px-4">Nuestros Productos</h2>
+          <p className="text-base sm:text-lg text-cream-warm/80 max-w-2xl mx-auto px-4">
             Café artesanal de las montañas de Boyacá. Tostado bajo pedido para garantizar máxima frescura y calidad.
           </p>
         </div>
 
-        <div className="grid gap-10 md:grid-cols-2">
+        <div className="grid gap-6 sm:gap-8 md:gap-10 md:grid-cols-2">
           {products.map((product) => (
             <div key={product.id} className="group bg-cream-light rounded-2xl shadow-xl overflow-hidden border border-cream-warm/20 hover:shadow-2xl hover:-translate-y-2 transform transition-all duration-500">
               {/* Badge */}
@@ -264,7 +308,7 @@ function ProductSection() {
                   </div>
                 </div>
 
-                <div className="h-80 overflow-hidden">
+                <div className="h-64 sm:h-72 md:h-80 overflow-hidden">
                   <img
                     src={product.image}
                     alt={product.alt}
@@ -273,35 +317,35 @@ function ProductSection() {
                 </div>
               </div>
 
-              <div className="p-8">
-                <div className="flex items-center gap-3 mb-4">
-                  <Coffee className="w-5 h-5 text-gold-muted" />
-                  <span className="text-sm uppercase tracking-widest text-gold-muted font-medium">{product.roastLevel}</span>
+              <div className="p-5 sm:p-6 md:p-8">
+                <div className="flex items-center gap-2 sm:gap-3 mb-3 sm:mb-4">
+                  <Coffee className="w-4 h-4 sm:w-5 sm:h-5 text-gold-muted" />
+                  <span className="text-xs sm:text-sm uppercase tracking-widest text-gold-muted font-medium">{product.roastLevel}</span>
                 </div>
 
-                <h3 className="font-serif text-3xl text-coffee-dark mb-4">{product.name}</h3>
+                <h3 className="font-serif text-2xl sm:text-3xl text-coffee-dark mb-3 sm:mb-4">{product.name}</h3>
 
-                <p className="text-coffee-medium/80 mb-6 leading-relaxed">{product.description}</p>
+                <p className="text-sm sm:text-base text-coffee-medium/80 mb-4 sm:mb-6 leading-relaxed">{product.description}</p>
 
                 {/* Características mejoradas */}
-                <div className="grid grid-cols-2 gap-3 mb-6">
+                <div className="grid grid-cols-2 gap-2 sm:gap-3 mb-4 sm:mb-6">
                   {product.features.map((feature, index) => (
-                    <div key={index} className="flex items-center gap-3 p-2 bg-cream-medium/50 rounded-lg">
-                      <span className="text-lg">{feature.icon}</span>
-                      <span className="text-sm text-coffee-dark font-medium">{feature.text}</span>
+                    <div key={index} className="flex items-center gap-2 sm:gap-3 p-2 bg-cream-medium/50 rounded-lg">
+                      <span className="text-base sm:text-lg flex-shrink-0">{feature.icon}</span>
+                      <span className="text-xs sm:text-sm text-coffee-dark font-medium">{feature.text}</span>
                     </div>
                   ))}
                 </div>
 
                 {/* Selector de tamaños mejorado */}
-                <div className="mb-6">
-                  <p className="text-sm text-coffee-medium mb-3 font-medium">Tamaño disponible:</p>
+                <div className="mb-4 sm:mb-6">
+                  <p className="text-xs sm:text-sm text-coffee-medium mb-2 sm:mb-3 font-medium">Tamaño disponible:</p>
                   <div className="flex gap-2">
                     {Object.entries(product.sizes).map(([size, pricing]) => (
                       <button
                         key={size}
                         onClick={() => setSelectedSize(prev => ({ ...prev, [product.id]: size }))}
-                        className={`px-4 py-2 rounded-lg text-sm font-medium transition-all duration-300 ${
+                        className={`px-3 sm:px-4 py-1.5 sm:py-2 rounded-lg text-xs sm:text-sm font-medium transition-all duration-300 ${
                           selectedSize[product.id] === size
                             ? 'bg-gold-muted text-coffee-dark shadow-md'
                             : 'bg-cream-medium text-coffee-medium hover:bg-cream-warm'
@@ -314,46 +358,46 @@ function ProductSection() {
                 </div>
 
                 {/* Precios mejorados */}
-                <div className="flex items-center justify-between">
-                  <div className="flex flex-col">
-                    <div className="flex items-center gap-3">
-                      <span className="text-3xl font-serif text-gold-muted">
+                <div className="flex flex-col sm:flex-row items-start sm:items-center justify-between gap-4">
+                  <div className="flex flex-col w-full sm:w-auto">
+                    <div className="flex items-center gap-2 sm:gap-3 flex-wrap">
+                      <span className="text-2xl sm:text-3xl font-serif text-gold-muted">
                         ${product.sizes[selectedSize[product.id] as keyof typeof product.sizes].price.toLocaleString()}
                       </span>
-                      <span className="text-lg text-coffee-medium/60 line-through">
+                      <span className="text-base sm:text-lg text-coffee-medium/60 line-through">
                         ${product.sizes[selectedSize[product.id] as keyof typeof product.sizes].originalPrice.toLocaleString()}
                       </span>
                     </div>
-                    <div className="flex items-center gap-2 mt-1">
-                      <span className="bg-gold-muted/20 text-gold-muted px-2 py-1 rounded text-xs font-medium">
+                    <div className="flex items-center gap-2 mt-1 flex-wrap">
+                      <span className="bg-gold-muted/20 text-gold-muted px-2 py-1 rounded text-[10px] sm:text-xs font-medium">
                         Ahorro: ${(product.sizes[selectedSize[product.id] as keyof typeof product.sizes].originalPrice - 
                                   product.sizes[selectedSize[product.id] as keyof typeof product.sizes].price).toLocaleString()}
                       </span>
-                      <CheckCircle className="w-4 h-4 text-gold-muted" />
-                      <span className="text-xs text-coffee-medium">Envío gratis</span>
+                      <CheckCircle className="w-3 h-3 sm:w-4 sm:h-4 text-gold-muted" />
+                      <span className="text-[10px] sm:text-xs text-coffee-medium">Envío gratis</span>
                     </div>
                   </div>
 
-                  <button className="bg-gold-muted text-coffee-dark px-8 py-3 rounded-lg text-sm font-medium tracking-widest uppercase hover:bg-gold-muted/90 hover:shadow-lg transform hover:-translate-y-0.5 transition-all duration-300 flex items-center gap-2">
+                  <button className="bg-gold-muted text-coffee-dark px-6 sm:px-8 py-2.5 sm:py-3 rounded-lg text-xs sm:text-sm font-medium tracking-widest uppercase hover:bg-gold-muted/90 hover:shadow-lg transform hover:-translate-y-0.5 transition-all duration-300 flex items-center gap-2 w-full sm:w-auto justify-center">
                     <span>Comprar Ahora</span>
-                    <Coffee className="w-4 h-4" />
+                    <Coffee className="w-3 h-3 sm:w-4 sm:h-4" />
                   </button>
                 </div>
 
                 {/* Información adicional */}
-                <div className="mt-6 pt-6 border-t border-cream-medium/30">
-                  <div className="flex items-center justify-between text-sm text-coffee-medium/70">
-                    <div className="flex items-center gap-2">
-                      <Leaf className="w-4 h-4 text-gold-muted" />
-                      <span>100% Orgánico</span>
+                <div className="mt-4 sm:mt-6 pt-4 sm:pt-6 border-t border-cream-medium/30">
+                  <div className="flex items-center justify-between text-xs sm:text-sm text-coffee-medium/70 flex-wrap gap-2">
+                    <div className="flex items-center gap-1.5 sm:gap-2">
+                      <Leaf className="w-3 h-3 sm:w-4 sm:h-4 text-gold-muted" />
+                      <span className="text-[10px] sm:text-xs">100% Orgánico</span>
                     </div>
-                    <div className="flex items-center gap-2">
-                      <HandHeart className="w-4 h-4 text-gold-muted" />
-                      <span>Comercio Justo</span>
+                    <div className="flex items-center gap-1.5 sm:gap-2">
+                      <HandHeart className="w-3 h-3 sm:w-4 sm:h-4 text-gold-muted" />
+                      <span className="text-[10px] sm:text-xs">Comercio Justo</span>
                     </div>
-                    <div className="flex items-center gap-2">
-                      <CheckCircle className="w-4 h-4 text-gold-muted" />
-                      <span>Tostado fresco</span>
+                    <div className="flex items-center gap-1.5 sm:gap-2">
+                      <CheckCircle className="w-3 h-3 sm:w-4 sm:h-4 text-gold-muted" />
+                      <span className="text-[10px] sm:text-xs">Tostado fresco</span>
                     </div>
                   </div>
                 </div>
@@ -363,13 +407,13 @@ function ProductSection() {
         </div>
 
         {/* Llamada a la acción adicional */}
-        <div className="text-center mt-16">
-          <div className="bg-cream-warm/10 backdrop-blur-sm rounded-2xl p-8 border border-gold-muted/20">
-            <h3 className="font-serif text-2xl text-cream-warm mb-4">¿No sabes cuál elegir?</h3>
-            <p className="text-cream-warm/80 mb-6 max-w-md mx-auto">
+        <div className="text-center mt-12 sm:mt-16 px-4">
+          <div className="bg-cream-warm/10 backdrop-blur-sm rounded-2xl p-6 sm:p-8 border border-gold-muted/20">
+            <h3 className="font-serif text-xl sm:text-2xl text-cream-warm mb-3 sm:mb-4">¿No sabes cuál elegir?</h3>
+            <p className="text-sm sm:text-base text-cream-warm/80 mb-4 sm:mb-6 max-w-md mx-auto">
               Nuestros expertos te ayudan a encontrar el café perfecto para tu paladar
             </p>
-            <button className="border-2 border-gold-muted text-gold-muted px-8 py-3 rounded-lg text-sm tracking-widest uppercase hover:bg-gold-muted hover:text-coffee-dark transition-all duration-500">
+            <button className="border-2 border-gold-muted text-gold-muted px-6 sm:px-8 py-2.5 sm:py-3 rounded-lg text-xs sm:text-sm tracking-widest uppercase hover:bg-gold-muted hover:text-coffee-dark transition-all duration-500">
               Consulta Gratuita
             </button>
           </div>
@@ -879,18 +923,18 @@ function BenefitsSection() {
   ];
 
   return (
-    <section className="py-24 px-6 bg-coffee-dark">
+    <section className="py-16 sm:py-20 md:py-24 px-4 sm:px-6 bg-coffee-dark">
       <div className="max-w-6xl mx-auto">
-        <div className="grid md:grid-cols-3 gap-12">
+        <div className="grid sm:grid-cols-2 md:grid-cols-3 gap-8 sm:gap-10 md:gap-12">
           {benefits.map((benefit, index) => {
             const Icon = benefit.icon;
             return (
               <div key={index} className="text-center">
-                <Icon className="w-16 h-16 text-gold-muted mx-auto mb-6" strokeWidth={1} />
-                <h3 className="text-cream-warm text-xl font-medium mb-3 tracking-wide">
+                <Icon className="w-12 h-12 sm:w-14 sm:h-14 md:w-16 md:h-16 text-gold-muted mx-auto mb-4 sm:mb-6" strokeWidth={1} />
+                <h3 className="text-cream-warm text-lg sm:text-xl font-medium mb-2 sm:mb-3 tracking-wide px-2">
                   {benefit.title}
                 </h3>
-                <p className="text-cream-warm/70 font-light">
+                <p className="text-sm sm:text-base text-cream-warm/70 font-light px-4">
                   {benefit.description}
                 </p>
               </div>
@@ -1188,22 +1232,22 @@ function TestimonialsSection() {
   ];
 
   return (
-    <section className="py-24 px-6 bg-cream-medium">
+    <section className="py-16 sm:py-20 md:py-24 px-4 sm:px-6 bg-cream-medium">
       <div className="max-w-6xl mx-auto">
-        <div className="grid md:grid-cols-3 gap-8">
+        <div className="grid sm:grid-cols-2 md:grid-cols-3 gap-6 sm:gap-8">
           {testimonials.map((testimonial, index) => (
-            <div key={index} className="bg-cream-light p-8 rounded-sm">
-              <div className="text-6xl text-gold-muted/30 font-serif mb-4">"</div>
-              <p className="text-coffee-dark/90 italic mb-6 font-light leading-relaxed">
+            <div key={index} className="bg-cream-light p-6 sm:p-8 rounded-sm">
+              <div className="text-5xl sm:text-6xl text-gold-muted/30 font-serif mb-3 sm:mb-4">"</div>
+              <p className="text-sm sm:text-base text-coffee-dark/90 italic mb-4 sm:mb-6 font-light leading-relaxed">
                 {testimonial.text}
               </p>
               <div>
-                <p className="text-coffee-dark font-medium">{testimonial.author}</p>
-                <p className="text-coffee-medium/60 text-sm">{testimonial.city}</p>
+                <p className="text-sm sm:text-base text-coffee-dark font-medium">{testimonial.author}</p>
+                <p className="text-coffee-medium/60 text-xs sm:text-sm">{testimonial.city}</p>
               </div>
-              <div className="flex gap-1 mt-4">
+              <div className="flex gap-1 mt-3 sm:mt-4">
                 {[...Array(5)].map((_, i) => (
-                  <div key={i} className="w-4 h-4 text-gold-muted">★</div>
+                  <div key={i} className="w-3 h-3 sm:w-4 sm:h-4 text-gold-muted">★</div>
                 ))}
               </div>
             </div>
@@ -1534,37 +1578,37 @@ function PreparationSection() {
 
 function SubscriptionSection() {
   return (
-    <section className="py-24 px-6 bg-gradient-to-br from-coffee-dark to-coffee-medium">
+    <section className="py-16 sm:py-20 md:py-24 px-4 sm:px-6 bg-gradient-to-br from-coffee-dark to-coffee-medium">
       <div className="max-w-2xl mx-auto text-center">
-        <h2 className="font-serif text-4xl md:text-5xl text-gold-muted mb-4">
+        <h2 className="font-serif text-3xl sm:text-4xl md:text-5xl text-gold-muted mb-3 sm:mb-4 px-4">
           Club El Hatillo
         </h2>
-        <p className="text-cream-warm/90 text-lg mb-8 font-light">
+        <p className="text-cream-warm/90 text-base sm:text-lg mb-6 sm:mb-8 font-light px-4">
           Café fresco cada mes en tu puerta
         </p>
 
-        <div className="flex flex-wrap justify-center gap-6 mb-12 text-cream-warm/80 text-sm">
-          <div className="flex items-center gap-2">
-            <CheckCircle className="w-5 h-5 text-gold-muted" />
+        <div className="flex flex-wrap justify-center gap-3 sm:gap-4 md:gap-6 mb-8 sm:mb-12 text-cream-warm/80 text-xs sm:text-sm px-4">
+          <div className="flex items-center gap-1.5 sm:gap-2">
+            <CheckCircle className="w-4 h-4 sm:w-5 sm:h-5 text-gold-muted flex-shrink-0" />
             <span>Descuento 15%</span>
           </div>
-          <div className="flex items-center gap-2">
-            <CheckCircle className="w-5 h-5 text-gold-muted" />
+          <div className="flex items-center gap-1.5 sm:gap-2">
+            <CheckCircle className="w-4 h-4 sm:w-5 sm:h-5 text-gold-muted flex-shrink-0" />
             <span>Envío gratis</span>
           </div>
-          <div className="flex items-center gap-2">
-            <CheckCircle className="w-5 h-5 text-gold-muted" />
+          <div className="flex items-center gap-1.5 sm:gap-2">
+            <CheckCircle className="w-4 h-4 sm:w-5 sm:h-5 text-gold-muted flex-shrink-0" />
             <span>Variedades exclusivas</span>
           </div>
         </div>
 
-        <div className="flex flex-col sm:flex-row gap-4 max-w-md mx-auto">
+        <div className="flex flex-col sm:flex-row gap-3 sm:gap-4 max-w-md mx-auto px-4">
           <input
             type="email"
             placeholder="Tu correo electrónico"
-            className="flex-1 px-6 py-3 bg-transparent border border-gold-muted/50 text-cream-warm placeholder-cream-warm/50 focus:outline-none focus:border-gold-muted transition-colors"
+            className="flex-1 px-4 sm:px-6 py-2.5 sm:py-3 bg-transparent border border-gold-muted/50 text-cream-warm placeholder-cream-warm/50 focus:outline-none focus:border-gold-muted transition-colors text-sm sm:text-base"
           />
-          <button className="bg-gold-muted text-coffee-dark px-8 py-3 text-sm tracking-widest uppercase hover:bg-gold-muted/90 transition-all duration-500">
+          <button className="bg-gold-muted text-coffee-dark px-6 sm:px-8 py-2.5 sm:py-3 text-xs sm:text-sm tracking-widest uppercase hover:bg-gold-muted/90 transition-all duration-500">
             Unirme
           </button>
         </div>
@@ -1575,72 +1619,72 @@ function SubscriptionSection() {
 
 function ContactSection() {
   return (
-    <section id="contact" className="py-24 px-6 bg-cream-light">
+    <section id="contact" className="py-16 sm:py-20 md:py-24 px-4 sm:px-6 bg-cream-light">
       <div className="max-w-6xl mx-auto">
-        <h2 className="font-serif text-4xl md:text-5xl text-coffee-dark text-center mb-16">
+        <h2 className="font-serif text-3xl sm:text-4xl md:text-5xl text-coffee-dark text-center mb-12 sm:mb-16">
           Contáctanos
         </h2>
 
-        <div className="grid md:grid-cols-2 gap-12">
-          <div className="space-y-8">
-            <div className="flex items-start gap-4">
-              <MapPin className="w-6 h-6 text-gold-muted flex-shrink-0 mt-1" />
+        <div className="grid md:grid-cols-2 gap-8 sm:gap-10 md:gap-12">
+          <div className="space-y-6 sm:space-y-8">
+            <div className="flex items-start gap-3 sm:gap-4">
+              <MapPin className="w-5 h-5 sm:w-6 sm:h-6 text-gold-muted flex-shrink-0 mt-1" />
               <div>
-                <h3 className="text-coffee-dark font-medium mb-1">Ubicación</h3>
-                <p className="text-coffee-medium/80 font-light">Togüi, Boyacá, Colombia</p>
+                <h3 className="text-sm sm:text-base text-coffee-dark font-medium mb-1">Ubicación</h3>
+                <p className="text-xs sm:text-base text-coffee-medium/80 font-light">Togüi, Boyacá, Colombia</p>
               </div>
             </div>
 
-            <div className="flex items-start gap-4">
-              <Mail className="w-6 h-6 text-gold-muted flex-shrink-0 mt-1" />
+            <div className="flex items-start gap-3 sm:gap-4">
+              <Mail className="w-5 h-5 sm:w-6 sm:h-6 text-gold-muted flex-shrink-0 mt-1" />
               <div>
-                <h3 className="text-coffee-dark font-medium mb-1">Email</h3>
-                <p className="text-coffee-medium/80 font-light">info@cafeelhatillo.com</p>
+                <h3 className="text-sm sm:text-base text-coffee-dark font-medium mb-1">Email</h3>
+                <p className="text-xs sm:text-base text-coffee-medium/80 font-light break-all">info@cafeelhatillo.com</p>
               </div>
             </div>
 
-            <div className="flex items-start gap-4">
-              <Phone className="w-6 h-6 text-gold-muted flex-shrink-0 mt-1" />
+            <div className="flex items-start gap-3 sm:gap-4">
+              <Phone className="w-5 h-5 sm:w-6 sm:h-6 text-gold-muted flex-shrink-0 mt-1" />
               <div>
-                <h3 className="text-coffee-dark font-medium mb-1">WhatsApp</h3>
-                <p className="text-coffee-medium/80 font-light">+57 300 123 4567</p>
+                <h3 className="text-sm sm:text-base text-coffee-dark font-medium mb-1">WhatsApp</h3>
+                <p className="text-xs sm:text-base text-coffee-medium/80 font-light">+57 300 123 4567</p>
               </div>
             </div>
 
-            <div className="flex items-start gap-4">
-              <Instagram className="w-6 h-6 text-gold-muted flex-shrink-0 mt-1" />
+            <div className="flex items-start gap-3 sm:gap-4">
+              <Instagram className="w-5 h-5 sm:w-6 sm:h-6 text-gold-muted flex-shrink-0 mt-1" />
               <div>
-                <h3 className="text-coffee-dark font-medium mb-1">Instagram</h3>
-                <p className="text-coffee-medium/80 font-light">@cafeelhatillo</p>
+                <h3 className="text-sm sm:text-base text-coffee-dark font-medium mb-1">Instagram</h3>
+                <p className="text-xs sm:text-base text-coffee-medium/80 font-light">@cafeelhatillo</p>
               </div>
             </div>
           </div>
 
-          <form className="space-y-6">
+          <form className="space-y-5 sm:space-y-6">
             <div>
               <input
                 type="text"
                 placeholder="Nombre"
-                className="w-full px-0 py-3 bg-transparent border-b border-coffee-medium/30 text-coffee-dark placeholder-coffee-medium/50 focus:outline-none focus:border-gold-muted transition-colors"
+                className="w-full px-0 py-2.5 sm:py-3 bg-transparent border-b border-coffee-medium/30 text-coffee-dark placeholder-coffee-medium/50 focus:outline-none focus:border-gold-muted transition-colors text-sm sm:text-base"
               />
             </div>
             <div>
               <input
                 type="email"
                 placeholder="Email"
-                className="w-full px-0 py-3 bg-transparent border-b border-coffee-medium/30 text-coffee-dark placeholder-coffee-medium/50 focus:outline-none focus:border-gold-muted transition-colors"
+                className="w-full px-0 py-2.5 sm:py-3 bg-transparent border-b border-coffee-medium/30 text-coffee-dark placeholder-coffee-medium/50 focus:outline-none focus:border-gold-muted transition-colors text-sm sm:text-base"
               />
             </div>
             <div>
               <textarea
                 placeholder="Mensaje"
                 rows={4}
-                className="w-full px-0 py-3 bg-transparent border-b border-coffee-medium/30 text-coffee-dark placeholder-coffee-medium/50 focus:outline-none focus:border-gold-muted transition-colors resize-none"
+                className="w-full px-0 py-2.5 sm:py-3 bg-transparent border-b border-coffee-medium/30 text-coffee-dark placeholder-coffee-medium/50 focus:outline-none focus:border-gold-muted transition-colors resize-none text-sm sm:text-base"
               />
             </div>
             <button
               type="submit"
-              className="bg-gold-muted text-coffee-dark px-8 py-3 text-sm tracking-widest uppercase hover:bg-gold-muted/90 transition-all duration-500 w-full"
+              className="bg-gold-muted text-coffee-dark px-6 sm:px-8 py-2.5 sm:py-3 text-xs sm:text-sm tracking-widest uppercase hover:bg-gold-muted/90 transition-all duration-500 w-full"
             >
               Enviar Mensaje
             </button>
@@ -1653,32 +1697,32 @@ function ContactSection() {
 
 function Footer({ scrollToSection }: { scrollToSection: (id: string) => void }) {
   return (
-    <footer className="bg-coffee-dark py-16 px-6">
+    <footer className="bg-coffee-dark py-12 sm:py-16 px-4 sm:px-6">
       <div className="max-w-6xl mx-auto">
-        <div className="text-center mb-8">
-          <div className="text-cream-warm font-serif text-2xl mb-6">El Hatillo</div>
+        <div className="text-center mb-6 sm:mb-8">
+          <div className="text-cream-warm font-serif text-xl sm:text-2xl mb-4 sm:mb-6">El Hatillo</div>
 
-          <div className="flex flex-wrap justify-center items-center gap-4 text-cream-warm/70 text-sm tracking-wider uppercase mb-8">
-            <button onClick={() => scrollToSection('story')} className="hover:text-gold-muted transition-colors">Sobre Nosotros</button>
-            <span className="text-gold-muted/30">|</span>
-            <button onClick={() => scrollToSection('product')} className="hover:text-gold-muted transition-colors">Productos</button>
-            <span className="text-gold-muted/30">|</span>
-            <button onClick={() => scrollToSection('contact')} className="hover:text-gold-muted transition-colors">Contacto</button>
-            <span className="text-gold-muted/30">|</span>
-            <button className="hover:text-gold-muted transition-colors">Términos</button>
+          <div className="flex flex-wrap justify-center items-center gap-2 sm:gap-3 md:gap-4 text-cream-warm/70 text-xs sm:text-sm tracking-wider uppercase mb-6 sm:mb-8 px-4">
+            <button onClick={() => scrollToSection('story')} className="hover:text-gold-muted transition-colors py-1">Sobre Nosotros</button>
+            <span className="text-gold-muted/30 hidden sm:inline">|</span>
+            <button onClick={() => scrollToSection('product')} className="hover:text-gold-muted transition-colors py-1">Productos</button>
+            <span className="text-gold-muted/30 hidden sm:inline">|</span>
+            <button onClick={() => scrollToSection('contact')} className="hover:text-gold-muted transition-colors py-1">Contacto</button>
+            <span className="text-gold-muted/30 hidden sm:inline">|</span>
+            <button className="hover:text-gold-muted transition-colors py-1">Términos</button>
           </div>
 
-          <div className="flex justify-center gap-6 mb-8">
-            <a href="#" className="text-cream-warm/70 hover:text-gold-muted transition-colors">
-              <Instagram className="w-5 h-5" />
+          <div className="flex justify-center gap-4 sm:gap-6 mb-6 sm:mb-8">
+            <a href="#" className="text-cream-warm/70 hover:text-gold-muted transition-colors p-2">
+              <Instagram className="w-5 h-5 sm:w-6 sm:h-6" />
             </a>
-            <a href="#" className="text-cream-warm/70 hover:text-gold-muted transition-colors">
-              <Mail className="w-5 h-5" />
+            <a href="#" className="text-cream-warm/70 hover:text-gold-muted transition-colors p-2">
+              <Mail className="w-5 h-5 sm:w-6 sm:h-6" />
             </a>
           </div>
         </div>
 
-        <div className="text-center text-cream-warm/50 text-sm font-light">
+        <div className="text-center text-cream-warm/50 text-xs sm:text-sm font-light px-4">
           © 2025 Café El Hatillo - Togüi, Boyacá
         </div>
       </div>
@@ -1692,9 +1736,9 @@ function WhatsAppButton() {
       href="https://wa.me/573001234567"
       target="_blank"
       rel="noopener noreferrer"
-      className="fixed bottom-8 right-8 w-14 h-14 bg-olive-dark rounded-full flex items-center justify-center shadow-lg hover:scale-110 transition-transform duration-300 z-40"
+      className="fixed bottom-4 right-4 sm:bottom-6 sm:right-6 md:bottom-8 md:right-8 w-12 h-12 sm:w-14 sm:h-14 bg-olive-dark rounded-full flex items-center justify-center shadow-lg hover:scale-110 transition-transform duration-300 z-40"
     >
-      <Phone className="w-6 h-6 text-cream-light" />
+      <Phone className="w-5 h-5 sm:w-6 sm:h-6 text-cream-light" />
     </a>
   );
 }

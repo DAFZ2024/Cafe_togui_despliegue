@@ -11,6 +11,19 @@
 
   body {
     @apply font-sans text-coffee-dark antialiased;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    overflow-x: hidden;
+  }
+
+  /* Optimizar el rendimiento en móviles */
+  * {
+    -webkit-tap-highlight-color: transparent;
+  }
+
+  /* Mejorar la experiencia táctil */
+  button, a, input, textarea {
+    touch-action: manipulation;
   }
 }
 
@@ -29,6 +42,26 @@
 
   .animate-draw-line {
     animation: drawLine 2s ease-in-out;
+  }
+
+  /* Mejoras para touch en dispositivos móviles */
+  @media (hover: none) and (pointer: coarse) {
+    button, a {
+      -webkit-tap-highlight-color: rgba(184, 147, 109, 0.2);
+    }
+  }
+
+  /* Optimización de imágenes para móviles */
+  img {
+    max-width: 100%;
+    height: auto;
+  }
+
+  /* Mejora del scroll suave en móviles */
+  @media (max-width: 768px) {
+    html {
+      -webkit-overflow-scrolling: touch;
+    }
   }
 
   @keyframes fadeIn {
