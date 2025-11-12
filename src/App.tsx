@@ -1000,29 +1000,29 @@ function OriginSection() {
   }, [features.length]);
 
   return (
-    <section className="py-24 px-6 bg-cream-light">
+    <section className="py-16 sm:py-20 md:py-24 px-4 sm:px-6 bg-cream-light">
       <div className="max-w-7xl mx-auto">
         {/* Header mejorado */}
-        <div className="text-center mb-16">
-          <div className="inline-flex items-center gap-3 mb-4">
-            <MapPin className="w-6 h-6 text-gold-muted" />
-            <span className="text-sm uppercase tracking-widest text-gold-muted font-medium">Nuestro Origen</span>
+        <div className="text-center mb-12 sm:mb-16">
+          <div className="inline-flex items-center gap-2 sm:gap-3 mb-3 sm:mb-4">
+            <MapPin className="w-5 h-5 sm:w-6 sm:h-6 text-gold-muted" />
+            <span className="text-xs sm:text-sm uppercase tracking-widest text-gold-muted font-medium">Nuestro Origen</span>
           </div>
-          <h2 className="font-serif text-4xl md:text-5xl text-coffee-dark mb-6">
+          <h2 className="font-serif text-3xl sm:text-4xl md:text-5xl text-coffee-dark mb-4 sm:mb-6 px-4">
             Togüi, Boyacá
           </h2>
-          <p className="text-lg text-coffee-medium/80 max-w-3xl mx-auto leading-relaxed">
+          <p className="text-base sm:text-lg text-coffee-medium/80 max-w-3xl mx-auto leading-relaxed px-4">
             En el corazón de la Región Andina colombiana, donde la tradición cafetera se encuentra con 
             la excelencia del terroir montañoso, nace nuestro café de especialidad.
           </p>
         </div>
 
         {/* Sección principal */}
-        <div className="grid lg:grid-cols-2 gap-16 items-center mb-16">
+        <div className="grid lg:grid-cols-2 gap-8 sm:gap-12 lg:gap-16 items-center mb-12 sm:mb-16">
           {/* Mapa y ubicación */}
           <div className="order-2 lg:order-1">
-            <div className="bg-cream-medium/50 p-6 rounded-2xl border border-gold-muted/10 shadow-lg">
-              <div className="w-full h-80 rounded-xl mb-6 overflow-hidden relative">
+            <div className="bg-cream-medium/50 p-4 sm:p-6 rounded-xl sm:rounded-2xl border border-gold-muted/10 shadow-lg">
+              <div className="w-full h-64 sm:h-80 rounded-lg sm:rounded-xl mb-4 sm:mb-6 overflow-hidden relative">
                 <iframe
                   title="Mapa Togui, Boyacá"
                   src="https://www.google.com/maps?q=Togui+Boyaca&z=12&output=embed"
@@ -1030,30 +1030,30 @@ function OriginSection() {
                   loading="lazy"
                   referrerPolicy="no-referrer-when-downgrade"
                 ></iframe>
-                <div className="absolute top-4 left-4 bg-cream-light/95 backdrop-blur-sm px-4 py-2 rounded-lg border border-gold-muted/20">
-                  <div className="flex items-center gap-2 text-sm">
-                    <MapPin className="w-4 h-4 text-gold-muted" />
+                <div className="absolute top-3 left-3 sm:top-4 sm:left-4 bg-cream-light/95 backdrop-blur-sm px-3 py-1.5 sm:px-4 sm:py-2 rounded-lg border border-gold-muted/20">
+                  <div className="flex items-center gap-1.5 sm:gap-2 text-xs sm:text-sm">
+                    <MapPin className="w-3 h-3 sm:w-4 sm:h-4 text-gold-muted" />
                     <span className="text-coffee-dark font-medium">Togüi, Boyacá</span>
                   </div>
                 </div>
               </div>
 
               {/* Información adicional */}
-              <div className="space-y-4">
-                <div className="flex items-center justify-between p-4 bg-cream-light rounded-xl border border-gold-muted/10">
+              <div className="space-y-3 sm:space-y-4">
+                <div className="flex items-center justify-between p-3 sm:p-4 bg-cream-light rounded-lg sm:rounded-xl border border-gold-muted/10">
                   <div>
-                    <h4 className="text-coffee-dark font-medium">Coordenadas</h4>
-                    <p className="text-sm text-coffee-medium/70">5°58'N, 74°28'W</p>
+                    <h4 className="text-sm sm:text-base text-coffee-dark font-medium">Coordenadas</h4>
+                    <p className="text-xs sm:text-sm text-coffee-medium/70">5°58'N, 74°28'W</p>
                   </div>
-                  <div className="text-2xl">🌍</div>
+                  <div className="text-xl sm:text-2xl">🌍</div>
                 </div>
                 
-                <div className="flex items-center justify-between p-4 bg-cream-light rounded-xl border border-gold-muted/10">
+                <div className="flex items-center justify-between p-3 sm:p-4 bg-cream-light rounded-lg sm:rounded-xl border border-gold-muted/10">
                   <div>
-                    <h4 className="text-coffee-dark font-medium">Distancia a Bogotá</h4>
-                    <p className="text-sm text-coffee-medium/70">180 km al noreste</p>
+                    <h4 className="text-sm sm:text-base text-coffee-dark font-medium">Distancia a Bogotá</h4>
+                    <p className="text-xs sm:text-sm text-coffee-medium/70">180 km al noreste</p>
                   </div>
-                  <div className="text-2xl">🚗</div>
+                  <div className="text-xl sm:text-2xl">🚗</div>
                 </div>
               </div>
             </div>
@@ -1061,7 +1061,7 @@ function OriginSection() {
 
           {/* Características del terroir */}
           <div className="order-1 lg:order-2">
-            <div className="space-y-6">
+            <div className="space-y-4 sm:space-y-6">
               {features.map((feature, index) => {
                 const isActive = activeFeature === index;
                 
@@ -1073,56 +1073,56 @@ function OriginSection() {
                       isActive ? 'scale-105' : 'hover:scale-102'
                     }`}
                   >
-                    <div className={`p-6 rounded-2xl border-2 transition-all duration-500 ${
+                    <div className={`p-4 sm:p-6 rounded-xl sm:rounded-2xl border-2 transition-all duration-500 ${
                       isActive 
                         ? 'bg-cream-medium border-gold-muted shadow-lg' 
                         : 'bg-cream-medium/50 border-cream-warm/20 hover:border-gold-muted/50 hover:bg-cream-medium'
                     }`}>
-                      <div className="flex items-start gap-6">
+                      <div className="flex items-start gap-3 sm:gap-6">
                         {/* Icono y valor */}
                         <div className="flex-shrink-0">
-                          <div className={`w-16 h-16 rounded-xl flex flex-col items-center justify-center border-2 transition-all duration-500 ${
+                          <div className={`w-12 h-12 sm:w-16 sm:h-16 rounded-lg sm:rounded-xl flex flex-col items-center justify-center border-2 transition-all duration-500 ${
                             isActive 
                               ? 'bg-gold-muted border-gold-muted' 
                               : 'bg-cream-light border-gold-muted/50 group-hover:border-gold-muted'
                           }`}>
-                            <span className="text-xl">{feature.icon}</span>
+                            <span className="text-lg sm:text-xl">{feature.icon}</span>
                           </div>
                         </div>
 
                         {/* Contenido */}
-                        <div className="flex-1">
-                          <div className="flex items-baseline gap-2 mb-2">
-                            <h3 className={`text-xl font-medium transition-colors duration-300 ${
+                        <div className="flex-1 min-w-0">
+                          <div className="flex items-baseline gap-2 mb-1 sm:mb-2">
+                            <h3 className={`text-base sm:text-xl font-medium transition-colors duration-300 ${
                               isActive ? 'text-coffee-dark' : 'text-coffee-medium group-hover:text-coffee-dark'
                             }`}>
                               {feature.title}
                             </h3>
                           </div>
 
-                          <div className="flex items-baseline gap-2 mb-3">
-                            <span className={`text-3xl font-serif transition-colors duration-300 ${
+                          <div className="flex items-baseline gap-1.5 sm:gap-2 mb-2 sm:mb-3">
+                            <span className={`text-2xl sm:text-3xl font-serif transition-colors duration-300 ${
                               isActive ? 'text-gold-muted' : 'text-coffee-medium group-hover:text-gold-muted'
                             }`}>
                               {feature.value}
                             </span>
-                            <span className={`text-sm transition-colors duration-300 ${
+                            <span className={`text-xs sm:text-sm transition-colors duration-300 ${
                               isActive ? 'text-gold-muted' : 'text-coffee-medium/70'
                             }`}>
                               {feature.unit}
                             </span>
                           </div>
 
-                          <p className={`text-sm mb-3 transition-colors duration-300 ${
+                          <p className={`text-xs sm:text-sm mb-2 sm:mb-3 leading-relaxed transition-colors duration-300 ${
                             isActive ? 'text-coffee-dark/90' : 'text-coffee-medium/70'
                           }`}>
                             {feature.description}
                           </p>
 
                           {isActive && (
-                            <div className="flex items-center gap-2 animate-fade-in">
-                              <CheckCircle className="w-4 h-4 text-gold-muted" />
-                              <span className="text-xs text-coffee-medium/80 italic">{feature.benefit}</span>
+                            <div className="flex items-start gap-2 animate-fade-in">
+                              <CheckCircle className="w-3 h-3 sm:w-4 sm:h-4 text-gold-muted flex-shrink-0 mt-0.5" />
+                              <span className="text-xs text-coffee-medium/80 italic leading-relaxed">{feature.benefit}</span>
                             </div>
                           )}
                         </div>
@@ -1136,12 +1136,12 @@ function OriginSection() {
         </div>
 
         {/* Indicadores de progreso */}
-        <div className="flex justify-center gap-3 mb-16">
+        <div className="flex justify-center gap-2 sm:gap-3 mb-12 sm:mb-16">
           {features.map((_, index) => (
             <button
               key={index}
               onClick={() => setActiveFeature(index)}
-              className={`w-3 h-3 rounded-full transition-all duration-300 ${
+              className={`w-2.5 h-2.5 sm:w-3 sm:h-3 rounded-full transition-all duration-300 ${
                 activeFeature === index 
                   ? 'bg-gold-muted scale-125' 
                   : 'bg-cream-warm hover:bg-gold-muted/50'
@@ -1151,21 +1151,21 @@ function OriginSection() {
         </div>
 
         {/* Estadísticas de la región */}
-        <div className="bg-coffee-dark/5 rounded-2xl p-8 border border-gold-muted/10">
-          <h3 className="font-serif text-2xl text-coffee-dark text-center mb-8">
+        <div className="bg-coffee-dark/5 rounded-xl sm:rounded-2xl p-6 sm:p-8 border border-gold-muted/10">
+          <h3 className="font-serif text-xl sm:text-2xl text-coffee-dark text-center mb-6 sm:mb-8">
             La Región en Números
           </h3>
           
-          <div className="grid md:grid-cols-4 gap-8">
+          <div className="grid grid-cols-2 md:grid-cols-4 gap-6 sm:gap-8">
             {regionStats.map((stat, index) => (
               <div key={index} className="text-center group">
-                <div className="bg-cream-medium/50 w-20 h-20 rounded-full mx-auto mb-4 flex items-center justify-center border border-gold-muted/20 group-hover:border-gold-muted/50 group-hover:bg-cream-medium transition-all duration-300">
-                  <span className="text-2xl">{stat.icon}</span>
+                <div className="bg-cream-medium/50 w-16 h-16 sm:w-20 sm:h-20 rounded-full mx-auto mb-3 sm:mb-4 flex items-center justify-center border border-gold-muted/20 group-hover:border-gold-muted/50 group-hover:bg-cream-medium transition-all duration-300">
+                  <span className="text-xl sm:text-2xl">{stat.icon}</span>
                 </div>
-                <div className="text-3xl font-serif text-gold-muted mb-2 group-hover:scale-110 transition-transform duration-300">
+                <div className="text-2xl sm:text-3xl font-serif text-gold-muted mb-1 sm:mb-2 group-hover:scale-110 transition-transform duration-300">
                   {stat.value}
                 </div>
-                <div className="text-sm text-coffee-medium/80 uppercase tracking-wider">
+                <div className="text-xs sm:text-sm text-coffee-medium/80 uppercase tracking-wider leading-tight">
                   {stat.label}
                 </div>
               </div>
@@ -1174,31 +1174,31 @@ function OriginSection() {
         </div>
 
         {/* Sección de historia regional */}
-        <div className="grid md:grid-cols-2 gap-12 mt-16">
-          <div className="space-y-6">
-            <h3 className="font-serif text-2xl text-coffee-dark">Historia & Tradición</h3>
-            <p className="text-coffee-medium/90 leading-relaxed">
+        <div className="grid md:grid-cols-2 gap-8 sm:gap-12 mt-12 sm:mt-16">
+          <div className="space-y-4 sm:space-y-6">
+            <h3 className="font-serif text-xl sm:text-2xl text-coffee-dark">Historia & Tradición</h3>
+            <p className="text-sm sm:text-base text-coffee-medium/90 leading-relaxed">
               Togüi es un municipio boyacense cuya tradición cafetera se remonta a principios del siglo XX. 
               Las familias campesinas han perfeccionado durante generaciones las técnicas de cultivo que 
               aprovechan las condiciones únicas de esta región montañosa.
             </p>
-            <p className="text-coffee-medium/90 leading-relaxed">
+            <p className="text-sm sm:text-base text-coffee-medium/90 leading-relaxed">
               El nombre "Togüi" proviene del idioma chibcha y significa "lugar del maíz", pero con el tiempo 
               se ha convertido en sinónimo de café de alta calidad en la región central de Colombia.
             </p>
 
-            <div className="flex flex-wrap gap-4 mt-6">
-              <div className="flex items-center gap-2 bg-cream-medium/50 px-4 py-2 rounded-lg">
-                <Leaf className="w-4 h-4 text-gold-muted" />
-                <span className="text-sm text-coffee-dark">Cultivo Orgánico</span>
+            <div className="flex flex-wrap gap-2 sm:gap-4 mt-4 sm:mt-6">
+              <div className="flex items-center gap-1.5 sm:gap-2 bg-cream-medium/50 px-3 sm:px-4 py-1.5 sm:py-2 rounded-lg">
+                <Leaf className="w-3 h-3 sm:w-4 sm:h-4 text-gold-muted" />
+                <span className="text-xs sm:text-sm text-coffee-dark">Cultivo Orgánico</span>
               </div>
-              <div className="flex items-center gap-2 bg-cream-medium/50 px-4 py-2 rounded-lg">
-                <HandHeart className="w-4 h-4 text-gold-muted" />
-                <span className="text-sm text-coffee-dark">Comercio Justo</span>
+              <div className="flex items-center gap-1.5 sm:gap-2 bg-cream-medium/50 px-3 sm:px-4 py-1.5 sm:py-2 rounded-lg">
+                <HandHeart className="w-3 h-3 sm:w-4 sm:h-4 text-gold-muted" />
+                <span className="text-xs sm:text-sm text-coffee-dark">Comercio Justo</span>
               </div>
-              <div className="flex items-center gap-2 bg-cream-medium/50 px-4 py-2 rounded-lg">
-                <CheckCircle className="w-4 h-4 text-gold-muted" />
-                <span className="text-sm text-coffee-dark">Certificado</span>
+              <div className="flex items-center gap-1.5 sm:gap-2 bg-cream-medium/50 px-3 sm:px-4 py-1.5 sm:py-2 rounded-lg">
+                <CheckCircle className="w-3 h-3 sm:w-4 sm:h-4 text-gold-muted" />
+                <span className="text-xs sm:text-sm text-coffee-dark">Certificado</span>
               </div>
             </div>
           </div>
@@ -1207,11 +1207,11 @@ function OriginSection() {
             <img
               src={IMAGES.story.landscape}
               alt="Paisaje cafetero de Togüí"
-              className="w-full h-80 object-cover rounded-2xl shadow-lg"
+              className="w-full h-64 sm:h-80 object-cover rounded-xl sm:rounded-2xl shadow-lg"
             />
-            <div className="absolute bottom-4 left-4 right-4">
-              <div className="bg-cream-light/95 backdrop-blur-sm p-4 rounded-xl border border-gold-muted/20">
-                <p className="text-coffee-dark text-sm italic">
+            <div className="absolute bottom-3 left-3 right-3 sm:bottom-4 sm:left-4 sm:right-4">
+              <div className="bg-cream-light/95 backdrop-blur-sm p-3 sm:p-4 rounded-lg sm:rounded-xl border border-gold-muted/20">
+                <p className="text-coffee-dark text-xs sm:text-sm italic leading-relaxed">
                   "Estas montañas han sido testigo de generaciones dedicadas al arte del café."
                 </p>
                 <div className="text-xs text-coffee-medium mt-1">— Don Carlos, Caficultor de 3ra generación</div>
@@ -1372,90 +1372,92 @@ function PreparationSection() {
   ];
 
   return (
-    <section className="py-24 px-6 bg-cream-light">
+    <section className="py-16 sm:py-20 md:py-24 px-4 sm:px-6 bg-cream-light">
       <div className="max-w-7xl mx-auto">
         {/* Header mejorado */}
-        <div className="text-center mb-16">
-          <div className="inline-flex items-center gap-3 mb-4">
-            <Coffee className="w-6 h-6 text-gold-muted" />
-            <span className="text-sm uppercase tracking-widest text-gold-muted font-medium">Guía de Preparación</span>
+        <div className="text-center mb-12 sm:mb-16">
+          <div className="inline-flex items-center gap-2 sm:gap-3 mb-3 sm:mb-4">
+            <Coffee className="w-5 h-5 sm:w-6 sm:h-6 text-gold-muted" />
+            <span className="text-xs sm:text-sm uppercase tracking-widest text-gold-muted font-medium">Guía de Preparación</span>
           </div>
-          <h2 className="font-serif text-4xl md:text-5xl text-coffee-dark mb-6">
+          <h2 className="font-serif text-3xl sm:text-4xl md:text-5xl text-coffee-dark mb-4 sm:mb-6 px-4">
             Prepara la Taza Perfecta
           </h2>
-          <p className="text-lg text-coffee-medium/80 max-w-3xl mx-auto leading-relaxed">
+          <p className="text-base sm:text-lg text-coffee-medium/80 max-w-3xl mx-auto leading-relaxed px-4">
             Descubre los secretos de la preparación perfecta con nuestras guías detalladas para cada método. 
             Cada técnica resalta diferentes características de nuestro café de especialidad.
           </p>
         </div>
 
         {/* Selector de métodos mejorado */}
-        <div className="flex flex-wrap justify-center gap-4 mb-12">
-          {Object.entries(methods).map(([key, method]) => (
-            <button
-              key={key}
-              onClick={() => setActiveMethod(key)}
-              className={`group flex items-center gap-3 px-6 py-4 rounded-2xl border-2 transition-all duration-500 ${
-                activeMethod === key
-                  ? 'bg-gold-muted border-gold-muted text-coffee-dark shadow-lg scale-105'
-                  : 'bg-cream-medium border-cream-warm/20 text-coffee-medium hover:border-gold-muted/50 hover:bg-cream-warm hover:scale-102'
-              }`}
-            >
-              <span className="text-2xl">{method.icon}</span>
-              <div className="text-left">
-                <div className={`font-medium transition-colors duration-300 ${
-                  activeMethod === key ? 'text-coffee-dark' : 'text-coffee-medium group-hover:text-coffee-dark'
-                }`}>
-                  {method.name}
+        <div className="overflow-x-auto pb-4 mb-8 sm:mb-12 -mx-4 px-4 sm:mx-0 sm:px-0">
+          <div className="flex sm:flex-wrap sm:justify-center gap-3 sm:gap-4 min-w-max sm:min-w-0">
+            {Object.entries(methods).map(([key, method]) => (
+              <button
+                key={key}
+                onClick={() => setActiveMethod(key)}
+                className={`group flex items-center gap-2 sm:gap-3 px-4 sm:px-6 py-3 sm:py-4 rounded-xl sm:rounded-2xl border-2 transition-all duration-500 flex-shrink-0 ${
+                  activeMethod === key
+                    ? 'bg-gold-muted border-gold-muted text-coffee-dark shadow-lg scale-105'
+                    : 'bg-cream-medium border-cream-warm/20 text-coffee-medium hover:border-gold-muted/50 hover:bg-cream-warm hover:scale-102'
+                }`}
+              >
+                <span className="text-xl sm:text-2xl">{method.icon}</span>
+                <div className="text-left">
+                  <div className={`text-sm sm:text-base font-medium transition-colors duration-300 ${
+                    activeMethod === key ? 'text-coffee-dark' : 'text-coffee-medium group-hover:text-coffee-dark'
+                  }`}>
+                    {method.name}
+                  </div>
+                  <div className={`text-xs transition-colors duration-300 ${
+                    activeMethod === key ? 'text-coffee-dark/70' : 'text-coffee-medium/60'
+                  }`}>
+                    {method.difficulty} • {method.time}
+                  </div>
                 </div>
-                <div className={`text-xs transition-colors duration-300 ${
-                  activeMethod === key ? 'text-coffee-dark/70' : 'text-coffee-medium/60'
-                }`}>
-                  {method.difficulty} • {method.time}
-                </div>
-              </div>
-            </button>
-          ))}
+              </button>
+            ))}
+          </div>
         </div>
 
         {/* Contenido principal del método */}
-        <div className="grid lg:grid-cols-2 gap-12 mb-16">
+        <div className="grid lg:grid-cols-2 gap-8 sm:gap-10 lg:gap-12 mb-12 sm:mb-16">
           {/* Información del método */}
-          <div className="space-y-8">
+          <div className="space-y-6 sm:space-y-8">
             {/* Header del método */}
-            <div className="bg-cream-medium/50 p-6 rounded-2xl border border-gold-muted/10">
-              <div className="flex items-center gap-4 mb-4">
-                <span className="text-4xl">{methods[activeMethod as keyof typeof methods].icon}</span>
-                <div>
-                  <h3 className="font-serif text-2xl text-coffee-dark">{methods[activeMethod as keyof typeof methods].name}</h3>
-                  <div className="flex items-center gap-4 text-sm text-coffee-medium/80">
-                    <span>📊 {methods[activeMethod as keyof typeof methods].difficulty}</span>
-                    <span>⏱️ {methods[activeMethod as keyof typeof methods].time}</span>
-                    <span>☕ {methods[activeMethod as keyof typeof methods].ratio}</span>
-                    <span>⚙️ {methods[activeMethod as keyof typeof methods].grind}</span>
+            <div className="bg-cream-medium/50 p-4 sm:p-6 rounded-xl sm:rounded-2xl border border-gold-muted/10">
+              <div className="flex items-start sm:items-center gap-3 sm:gap-4 mb-3 sm:mb-4">
+                <span className="text-3xl sm:text-4xl flex-shrink-0">{methods[activeMethod as keyof typeof methods].icon}</span>
+                <div className="flex-1 min-w-0">
+                  <h3 className="font-serif text-xl sm:text-2xl text-coffee-dark mb-2">{methods[activeMethod as keyof typeof methods].name}</h3>
+                  <div className="grid grid-cols-2 sm:flex sm:flex-wrap gap-2 sm:gap-4 text-xs sm:text-sm text-coffee-medium/80">
+                    <span className="flex items-center gap-1">📊 {methods[activeMethod as keyof typeof methods].difficulty}</span>
+                    <span className="flex items-center gap-1">⏱️ {methods[activeMethod as keyof typeof methods].time}</span>
+                    <span className="flex items-center gap-1">☕ {methods[activeMethod as keyof typeof methods].ratio}</span>
+                    <span className="flex items-center gap-1">⚙️ {methods[activeMethod as keyof typeof methods].grind}</span>
                   </div>
                 </div>
               </div>
-              <p className="text-coffee-dark/90 leading-relaxed">
+              <p className="text-sm sm:text-base text-coffee-dark/90 leading-relaxed">
                 {methods[activeMethod as keyof typeof methods].description}
               </p>
             </div>
 
             {/* Pasos de preparación */}
             <div>
-              <h4 className="text-xl font-medium text-coffee-dark mb-6 flex items-center gap-2">
+              <h4 className="text-lg sm:text-xl font-medium text-coffee-dark mb-4 sm:mb-6 flex items-center gap-2">
                 <span className="text-gold-muted">📋</span>
                 Pasos de Preparación
               </h4>
-              <div className="space-y-4">
+              <div className="space-y-3 sm:space-y-4">
                 {methods[activeMethod as keyof typeof methods].steps.map((step, index) => (
-                  <div key={index} className="group flex gap-4 p-4 bg-cream-medium/30 rounded-xl hover:bg-cream-medium/50 transition-colors duration-300">
-                    <div className="flex-shrink-0 w-8 h-8 rounded-full bg-gold-muted/20 flex items-center justify-center text-coffee-dark font-medium group-hover:bg-gold-muted/30 transition-colors duration-300">
+                  <div key={index} className="group flex gap-3 sm:gap-4 p-3 sm:p-4 bg-cream-medium/30 rounded-lg sm:rounded-xl hover:bg-cream-medium/50 transition-colors duration-300">
+                    <div className="flex-shrink-0 w-7 h-7 sm:w-8 sm:h-8 rounded-full bg-gold-muted/20 flex items-center justify-center text-coffee-dark text-sm sm:text-base font-medium group-hover:bg-gold-muted/30 transition-colors duration-300">
                       {index + 1}
                     </div>
-                    <div className="flex-1">
-                      <p className="text-coffee-dark font-medium mb-1">{step.text}</p>
-                      <p className="text-sm text-coffee-medium/70">{step.detail}</p>
+                    <div className="flex-1 min-w-0">
+                      <p className="text-sm sm:text-base text-coffee-dark font-medium mb-1">{step.text}</p>
+                      <p className="text-xs sm:text-sm text-coffee-medium/70 leading-relaxed">{step.detail}</p>
                     </div>
                   </div>
                 ))}
@@ -1464,15 +1466,15 @@ function PreparationSection() {
 
             {/* Consejos profesionales */}
             <div>
-              <h4 className="text-xl font-medium text-coffee-dark mb-4 flex items-center gap-2">
+              <h4 className="text-lg sm:text-xl font-medium text-coffee-dark mb-3 sm:mb-4 flex items-center gap-2">
                 <span className="text-gold-muted">💡</span>
                 Consejos Profesionales
               </h4>
-              <div className="grid gap-3">
+              <div className="grid gap-2 sm:gap-3">
                 {methods[activeMethod as keyof typeof methods].tips.map((tip, index) => (
-                  <div key={index} className="flex items-center gap-3 p-3 bg-gold-muted/10 rounded-lg">
-                    <CheckCircle className="w-4 h-4 text-gold-muted flex-shrink-0" />
-                    <span className="text-sm text-coffee-dark">{tip}</span>
+                  <div key={index} className="flex items-start gap-2 sm:gap-3 p-2.5 sm:p-3 bg-gold-muted/10 rounded-lg">
+                    <CheckCircle className="w-4 h-4 text-gold-muted flex-shrink-0 mt-0.5" />
+                    <span className="text-xs sm:text-sm text-coffee-dark leading-relaxed">{tip}</span>
                   </div>
                 ))}
               </div>
@@ -1480,15 +1482,15 @@ function PreparationSection() {
 
             {/* Equipamiento necesario */}
             <div>
-              <h4 className="text-xl font-medium text-coffee-dark mb-4 flex items-center gap-2">
+              <h4 className="text-lg sm:text-xl font-medium text-coffee-dark mb-3 sm:mb-4 flex items-center gap-2">
                 <span className="text-gold-muted">🛠️</span>
                 Equipamiento Necesario
               </h4>
-              <div className="grid grid-cols-2 gap-3">
+              <div className="grid grid-cols-1 sm:grid-cols-2 gap-2 sm:gap-3">
                 {methods[activeMethod as keyof typeof methods].equipment.map((item, index) => (
-                  <div key={index} className="flex items-center gap-2 p-3 bg-cream-medium/50 rounded-lg">
-                    <span className="text-gold-muted">•</span>
-                    <span className="text-sm text-coffee-dark">{item}</span>
+                  <div key={index} className="flex items-center gap-2 p-2.5 sm:p-3 bg-cream-medium/50 rounded-lg">
+                    <span className="text-gold-muted flex-shrink-0">•</span>
+                    <span className="text-xs sm:text-sm text-coffee-dark">{item}</span>
                   </div>
                 ))}
               </div>
@@ -1496,34 +1498,34 @@ function PreparationSection() {
           </div>
 
           {/* Imagen y visualización */}
-          <div className="space-y-6">
-            <div className="relative rounded-2xl overflow-hidden shadow-2xl">
+          <div className="space-y-4 sm:space-y-6">
+            <div className="relative rounded-xl sm:rounded-2xl overflow-hidden shadow-xl sm:shadow-2xl">
               <img
                 src={methods[activeMethod as keyof typeof methods].image}
                 alt={methods[activeMethod as keyof typeof methods].name}
-                className="w-full h-96 lg:h-[500px] object-cover transition-all duration-700"
+                className="w-full h-64 sm:h-80 md:h-96 lg:h-[500px] object-cover transition-all duration-700"
               />
               <div className="absolute inset-0 bg-gradient-to-t from-coffee-dark/60 via-transparent to-transparent" />
               
               {/* Overlay con información rápida */}
-              <div className="absolute bottom-6 left-6 right-6">
-                <div className="bg-cream-light/95 backdrop-blur-sm p-6 rounded-xl border border-gold-muted/20">
-                  <div className="grid grid-cols-2 gap-4 text-sm">
+              <div className="absolute bottom-3 left-3 right-3 sm:bottom-6 sm:left-6 sm:right-6">
+                <div className="bg-cream-light/95 backdrop-blur-sm p-4 sm:p-6 rounded-lg sm:rounded-xl border border-gold-muted/20">
+                  <div className="grid grid-cols-2 gap-3 sm:gap-4 text-xs sm:text-sm">
                     <div>
-                      <span className="text-coffee-medium/60 uppercase tracking-wide">Proporción</span>
-                      <div className="text-gold-muted font-medium">{methods[activeMethod as keyof typeof methods].ratio}</div>
+                      <span className="text-coffee-medium/60 uppercase tracking-wide text-xs">Proporción</span>
+                      <div className="text-gold-muted font-medium text-sm sm:text-base">{methods[activeMethod as keyof typeof methods].ratio}</div>
                     </div>
                     <div>
-                      <span className="text-coffee-medium/60 uppercase tracking-wide">Molienda</span>
-                      <div className="text-gold-muted font-medium">{methods[activeMethod as keyof typeof methods].grind}</div>
+                      <span className="text-coffee-medium/60 uppercase tracking-wide text-xs">Molienda</span>
+                      <div className="text-gold-muted font-medium text-sm sm:text-base">{methods[activeMethod as keyof typeof methods].grind}</div>
                     </div>
                     <div>
-                      <span className="text-coffee-medium/60 uppercase tracking-wide">Tiempo</span>
-                      <div className="text-gold-muted font-medium">{methods[activeMethod as keyof typeof methods].time}</div>
+                      <span className="text-coffee-medium/60 uppercase tracking-wide text-xs">Tiempo</span>
+                      <div className="text-gold-muted font-medium text-sm sm:text-base">{methods[activeMethod as keyof typeof methods].time}</div>
                     </div>
                     <div>
-                      <span className="text-coffee-medium/60 uppercase tracking-wide">Dificultad</span>
-                      <div className="text-gold-muted font-medium">{methods[activeMethod as keyof typeof methods].difficulty}</div>
+                      <span className="text-coffee-medium/60 uppercase tracking-wide text-xs">Dificultad</span>
+                      <div className="text-gold-muted font-medium text-sm sm:text-base">{methods[activeMethod as keyof typeof methods].difficulty}</div>
                     </div>
                   </div>
                 </div>
@@ -1531,18 +1533,18 @@ function PreparationSection() {
             </div>
 
             {/* Tarjeta de café recomendado */}
-            <div className="bg-coffee-dark/5 p-6 rounded-2xl border border-gold-muted/10">
-              <h4 className="text-lg font-medium text-coffee-dark mb-3">☕ Café Recomendado</h4>
-              <div className="flex items-center gap-4">
+            <div className="bg-coffee-dark/5 p-4 sm:p-6 rounded-xl sm:rounded-2xl border border-gold-muted/10">
+              <h4 className="text-base sm:text-lg font-medium text-coffee-dark mb-3">☕ Café Recomendado</h4>
+              <div className="flex items-center gap-3 sm:gap-4">
                 <img 
                   src={IMAGES.products.clasico}
                   alt="El Hatillo Clásico"
-                  className="w-16 h-16 object-cover rounded-lg"
+                  className="w-14 h-14 sm:w-16 sm:h-16 object-cover rounded-lg flex-shrink-0"
                 />
-                <div>
-                  <h5 className="text-coffee-dark font-medium">El Hatillo - Clásico</h5>
-                  <p className="text-sm text-coffee-medium/80">Perfecto para este método de preparación</p>
-                  <div className="text-gold-muted text-sm font-medium">$28.000 - 500g</div>
+                <div className="flex-1 min-w-0">
+                  <h5 className="text-sm sm:text-base text-coffee-dark font-medium">El Hatillo - Clásico</h5>
+                  <p className="text-xs sm:text-sm text-coffee-medium/80">Perfecto para este método de preparación</p>
+                  <div className="text-gold-muted text-xs sm:text-sm font-medium mt-1">$28.000 - 500g</div>
                 </div>
               </div>
             </div>
@@ -1550,21 +1552,21 @@ function PreparationSection() {
         </div>
 
         {/* Consejos generales */}
-        <div className="bg-cream-medium/30 rounded-2xl p-8 border border-gold-muted/10">
-          <h3 className="font-serif text-2xl text-coffee-dark text-center mb-8">
+        <div className="bg-cream-medium/30 rounded-xl sm:rounded-2xl p-6 sm:p-8 border border-gold-muted/10">
+          <h3 className="font-serif text-xl sm:text-2xl text-coffee-dark text-center mb-6 sm:mb-8 px-4">
             Consejos Universales para el Café Perfecto
           </h3>
           
-          <div className="grid md:grid-cols-4 gap-6">
+          <div className="grid grid-cols-2 md:grid-cols-4 gap-4 sm:gap-6">
             {generalTips.map((tip, index) => (
               <div key={index} className="text-center group">
-                <div className="bg-cream-light w-16 h-16 rounded-full mx-auto mb-4 flex items-center justify-center border border-gold-muted/20 group-hover:border-gold-muted/50 group-hover:bg-cream-warm transition-all duration-300">
-                  <span className="text-2xl">{tip.icon}</span>
+                <div className="bg-cream-light w-14 h-14 sm:w-16 sm:h-16 rounded-full mx-auto mb-3 sm:mb-4 flex items-center justify-center border border-gold-muted/20 group-hover:border-gold-muted/50 group-hover:bg-cream-warm transition-all duration-300">
+                  <span className="text-xl sm:text-2xl">{tip.icon}</span>
                 </div>
-                <h4 className="text-coffee-dark font-medium mb-2 group-hover:text-gold-muted transition-colors duration-300">
+                <h4 className="text-sm sm:text-base text-coffee-dark font-medium mb-1 sm:mb-2 group-hover:text-gold-muted transition-colors duration-300 px-2">
                   {tip.title}
                 </h4>
-                <p className="text-sm text-coffee-medium/80 leading-relaxed">
+                <p className="text-xs sm:text-sm text-coffee-medium/80 leading-relaxed px-2">
                   {tip.description}
                 </p>
               </div>
