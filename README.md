@@ -1,190 +1,233 @@
-# ☕ Café El Hatillo - Sitio Web
+<div align="center">
+  <img src="https://capsule-render.vercel.app/api?type=waving&color=gradient&customColorList=6,11,12&height=220&section=header&text=☕%20Café%20El%20Hatillo&fontSize=60&fontColor=F5F0E8&animation=fadeIn&desc=Café%20de%20Especialidad%20·%20Togüí,%20Boyacá%20🇨🇴&descSize=20&descAlignY=68&fontAlignY=42" width="100%" />
+</div>
 
-![Café El Hatillo](https://img.shields.io/badge/Caf%C3%A9-El%20Hatillo-8B4513?style=for-the-badge)
-![React](https://img.shields.io/badge/React-18.3.1-61DAFB?style=for-the-badge&logo=react)
-![TypeScript](https://img.shields.io/badge/TypeScript-5.5.3-3178C6?style=for-the-badge&logo=typescript)
-![Vite](https://img.shields.io/badge/Vite-5.4.2-646CFF?style=for-the-badge&logo=vite)
-![TailwindCSS](https://img.shields.io/badge/Tailwind-3.4.1-06B6D4?style=for-the-badge&logo=tailwindcss)
+<div align="center">
 
-## 📋 Descripción
+  ![React](https://img.shields.io/badge/React-18.3.1-61DAFB?style=for-the-badge&logo=react&logoColor=white)
+  ![TypeScript](https://img.shields.io/badge/TypeScript-5.5.3-3178C6?style=for-the-badge&logo=typescript&logoColor=white)
+  ![Vite](https://img.shields.io/badge/Vite-5.4.2-646CFF?style=for-the-badge&logo=vite&logoColor=white)
+  ![TailwindCSS](https://img.shields.io/badge/Tailwind-3.4.1-06B6D4?style=for-the-badge&logo=tailwindcss&logoColor=white)
+  ![Supabase](https://img.shields.io/badge/Supabase-2.57.4-3ECF8E?style=for-the-badge&logo=supabase&logoColor=white)
+  ![License](https://img.shields.io/badge/Licencia-MIT-B8956A?style=for-the-badge)
 
-Sitio web de **Café El Hatillo**, una marca de café de especialidad de las montañas de Togüí, Boyacá, Colombia. Este proyecto presenta una experiencia visual moderna e inmersiva que destaca la historia, el proceso artesanal y la calidad premium del café colombiano.
+</div>
+
+<br/>
+
+> *Del corazón de las montañas de Boyacá a tu taza — una experiencia web tan artesanal como nuestro café.*
+
+---
+
+## 📌 Tabla de Contenidos
+
+- [🌿 Sobre el Proyecto](#-sobre-el-proyecto)
+- [✨ Características](#-características)
+- [🎨 Diseño y Paleta](#-diseño-y-paleta)
+- [🛠️ Tecnologías](#️-tecnologías)
+- [📁 Estructura del Proyecto](#-estructura-del-proyecto)
+- [🚀 Inicio Rápido](#-inicio-rápido)
+- [📜 Scripts](#-scripts)
+- [🌟 Componentes Principales](#-componentes-principales)
+- [🚢 Despliegue](#-despliegue)
+- [🤝 Contribuciones](#-contribuciones)
+- [📞 Contacto](#-contacto)
+
+---
+
+## 🌿 Sobre el Proyecto
+
+**Café El Hatillo** es una marca de café de especialidad originaria de **Togüí, Boyacá, Colombia**. Este sitio web presenta una experiencia visual inmersiva que celebra la historia, el proceso artesanal y la calidad premium del café colombiano de alta montaña.
+
+El proyecto fue construido con un enfoque **mobile-first**, animaciones suaves y una identidad visual que evoca los tonos cálidos de la tierra cafetera.
+
+---
 
 ## ✨ Características
 
 ### 🎨 Diseño y UX
-- **Diseño minimalista elegante** con paleta de colores tierra (crema, café, dorado)
-- **Animaciones suaves** con parallax scrolling y transiciones fluidas
-- **Totalmente responsive** - optimizado para móviles, tablets y desktop
-- **Navegación intuitiva** con menú sticky y scroll suave
+- Paleta de colores tierra: crema, café y dorado
+- Efecto parallax en el hero y transiciones fluidas entre secciones
+- Navegación sticky con desvanecimiento al hacer scroll
+- Totalmente responsive — móvil, tablet y desktop
 
-### 📦 Secciones del Sitio
-1. **Hero Section** - Banner impactante con efecto parallax
-2. **Historia** - Origen y tradición del café boyacense
-3. **Productos** - Catálogo con dos variedades (Clásico y Reserva)
-4. **Proceso** - Timeline interactivo del cultivo a la taza
-5. **Galería** - Imágenes filtradas por categorías
-6. **Beneficios** - Valores de sostenibilidad y comercio justo
-7. **Origen** - Información del terroir de Togüí
-8. **Testimonios** - Reseñas de clientes
-9. **Preparación** - Guías detalladas para 5 métodos
-10. **Suscripción** - Club de café mensual
-11. **Contacto** - Formulario y datos de contacto
+### 📄 Secciones del Sitio
 
-### 🛠️ Tecnologías
+| # | Sección | Descripción |
+|---|---------|-------------|
+| 1 | **Hero** | Banner con parallax y animación de entrada |
+| 2 | **Historia** | Origen y tradición del café boyacense |
+| 3 | **Productos** | Catálogo con variedades Clásico y Reserva |
+| 4 | **Proceso** | Timeline del cultivo a la taza (5 etapas) |
+| 5 | **Galería** | Imágenes filtradas por categoría + lightbox |
+| 6 | **Beneficios** | Sostenibilidad y comercio justo |
+| 7 | **Origen** | Terroir y geografía de Togüí |
+| 8 | **Testimonios** | Reseñas de clientes |
+| 9 | **Preparación** | Guías para 5 métodos de preparación |
+| 10 | **Suscripción** | Club de café mensual |
+| 11 | **Contacto** | Formulario y datos |
 
-- **Frontend Framework:** React 18.3.1
-- **Lenguaje:** TypeScript 5.5.3
-- **Build Tool:** Vite 5.4.2
-- **Estilos:** TailwindCSS 3.4.1
-- **Iconos:** Lucide React 0.344.0
-- **Backend (opcional):** Supabase 2.57.4
+---
 
-## 🚀 Inicio Rápido
+## 🎨 Diseño y Paleta
 
-### Prerrequisitos
+La identidad visual está inspirada en los tonos naturales del café y las montañas boyacenses:
 
-- Node.js (versión 16 o superior)
-- npm o yarn
+<table>
+<tr>
+  <td align="center"><img src="https://img.shields.io/badge/-%23F5F0E8-F5F0E8?style=for-the-badge"/><br/><sub>Cream Light<br/><code>#F5F0E8</code> — Fondo</sub></td>
+  <td align="center"><img src="https://img.shields.io/badge/-%23E8DCC8-E8DCC8?style=for-the-badge"/><br/><sub>Cream Warm<br/><code>#E8DCC8</code> — Acentos</sub></td>
+  <td align="center"><img src="https://img.shields.io/badge/-%233E2723-3E2723?style=for-the-badge"/><br/><sub>Coffee Dark<br/><code>#3E2723</code> — Texto</sub></td>
+  <td align="center"><img src="https://img.shields.io/badge/-%23B8956A-B8956A?style=for-the-badge"/><br/><sub>Gold Muted<br/><code>#B8956A</code> — Dorados</sub></td>
+  <td align="center"><img src="https://img.shields.io/badge/-%23556B2F-556B2F?style=for-the-badge"/><br/><sub>Olive Dark<br/><code>#556B2F</code> — WhatsApp</sub></td>
+</tr>
+</table>
 
-### Instalación
-
-1. **Clonar el repositorio**
-```bash
-git clone https://github.com/tu-usuario/cafe-el-hatillo.git
-cd cafe-el-hatillo
+```js
+// tailwind.config.js
+colors: {
+  'cream-light':   '#F5F0E8',   // Fondo principal
+  'cream-warm':    '#E8DCC8',   // Acentos cálidos
+  'cream-medium':  '#D4C4A8',   // Bordes suaves
+  'coffee-dark':   '#3E2723',   // Texto principal
+  'coffee-medium': '#6D4C41',   // Texto secundario
+  'gold-muted':    '#B8956A',   // Acentos dorados
+  'olive-dark':    '#556B2F',   // Botón WhatsApp
+}
 ```
 
-2. **Instalar dependencias**
-```bash
-npm install
-```
+---
 
-3. **Iniciar servidor de desarrollo**
-```bash
-npm run dev
-```
+## 🛠️ Tecnologías
 
-4. **Abrir en el navegador**
-```
-http://localhost:5173
-```
+| Capa | Tecnología | Versión |
+|------|-----------|---------|
+| **UI Framework** | React | 18.3.1 |
+| **Lenguaje** | TypeScript | 5.5.3 |
+| **Build Tool** | Vite + HMR | 5.4.2 |
+| **Estilos** | Tailwind CSS | 3.4.1 |
+| **Iconos** | Lucide React | 0.344.0 |
+| **Backend (opcional)** | Supabase | 2.57.4 |
 
-## 📜 Scripts Disponibles
-
-| Script | Descripción |
-|--------|-------------|
-| `npm run dev` | Inicia servidor de desarrollo con hot reload |
-| `npm run build` | Compila el proyecto para producción |
-| `npm run preview` | Vista previa del build de producción |
-| `npm run lint` | Ejecuta ESLint para análisis de código |
-| `npm run typecheck` | Verifica tipos de TypeScript |
+---
 
 ## 📁 Estructura del Proyecto
 
 ```
-Cafe-bolt-main/
-├── public/
-│   └── images/
-│       ├── gallery/      # Imágenes de la galería
+cafe-el-hatillo/
+├── 📁 public/
+│   └── 📁 images/
+│       ├── gallery/      # Galería de fotos
 │       ├── hero/         # Imágenes del hero
-│       ├── process/      # Imágenes del proceso
-│       ├── products/     # Imágenes de productos
-│       └── story/        # Imágenes de historia
-├── src/
-│   ├── assets/
-│   │   └── images.ts     # Configuración de rutas de imágenes
-│   ├── App.tsx           # Componente principal
+│       ├── process/      # Etapas del proceso
+│       ├── products/     # Fotos de productos
+│       └── story/        # Historia de la marca
+│
+├── 📁 src/
+│   ├── 📁 assets/
+│   │   └── images.ts     # Rutas centralizadas de imágenes
+│   ├── App.tsx           # Componente raíz
 │   ├── main.tsx          # Punto de entrada
-│   └── index.css         # Estilos globales con Tailwind
-├── eslint.config.js      # Configuración de ESLint
-├── postcss.config.js     # Configuración de PostCSS
-├── tailwind.config.js    # Configuración de Tailwind
-├── tsconfig.json         # Configuración de TypeScript
-├── vite.config.ts        # Configuración de Vite
-└── package.json          # Dependencias y scripts
+│   └── index.css         # Estilos globales (Tailwind)
+│
+├── eslint.config.js
+├── postcss.config.js
+├── tailwind.config.js
+├── tsconfig.json
+├── vite.config.ts
+└── package.json
 ```
 
-## 🎨 Paleta de Colores
+### Gestión de imágenes
 
-La paleta de colores está inspirada en los tonos naturales del café:
-
-```javascript
-colors: {
-  'cream-light': '#F5F0E8',   // Fondo principal
-  'cream-warm': '#E8DCC8',    // Acentos cálidos
-  'cream-medium': '#D4C4A8',  // Bordes suaves
-  'coffee-dark': '#3E2723',   // Texto principal
-  'coffee-medium': '#6D4C41', // Texto secundario
-  'gold-muted': '#B8956A',    // Acentos dorados
-  'olive-dark': '#556B2F'     // WhatsApp button
-}
-```
-
-## 🖼️ Gestión de Imágenes
-
-Las imágenes se organizan por categorías en `src/assets/images.ts`:
+Las rutas de imágenes están centralizadas en `src/assets/images.ts` para facilitar el mantenimiento:
 
 ```typescript
 export const IMAGES = {
-  hero: { main: '/images/hero/hero-coffee.jpg' },
-  story: { cafetales: '/images/story/cafetales.jpg', ... },
-  products: { clasico: '/images/products/clasico.jpg', ... },
-  process: { cultivo: '/images/process/cultivo.jpg', ... },
-  gallery: { mountains: '/images/gallery/mountains.jpg', ... },
-  preparation: { pourover: '/images/preparation/pourover.jpg', ... }
+  hero:        { main: '/images/hero/hero-coffee.jpg' },
+  story:       { cafetales: '/images/story/cafetales.jpg' },
+  products:    { clasico: '/images/products/clasico.jpg' },
+  process:     { cultivo: '/images/process/cultivo.jpg' },
+  gallery:     { mountains: '/images/gallery/mountains.jpg' },
+  preparation: { pourover: '/images/preparation/pourover.jpg' },
 }
 ```
 
-## 🔧 Configuración de Desarrollo
+---
 
-### ESLint
-Configuración moderna con TypeScript ESLint y reglas para React:
+## 🚀 Inicio Rápido
+
+### Prerrequisitos
+- Node.js 16+
+- npm o yarn
+
+### Instalación
+
 ```bash
-npm run lint
+# 1. Clonar el repositorio
+git clone https://github.com/tu-usuario/cafe-el-hatillo.git
+cd cafe-el-hatillo
+
+# 2. Instalar dependencias
+npm install
+
+# 3. Iniciar servidor de desarrollo
+npm run dev
 ```
 
-### TypeScript
-Type checking estricto configurado en `tsconfig.json`:
-```bash
-npm run typecheck
-```
+Abre [http://localhost:5173](http://localhost:5173) en tu navegador. 🎉
 
-### Vite
-Hot Module Replacement (HMR) configurado con React Fast Refresh para desarrollo ágil.
+---
 
-## 📱 Características Responsive
+## 📜 Scripts
 
-- **Mobile First Design**
-- Breakpoints de Tailwind:
-  - `sm`: 640px
-  - `md`: 768px
-  - `lg`: 1024px
-  - `xl`: 1280px
+| Script | Descripción |
+|--------|-------------|
+| `npm run dev` | Servidor de desarrollo con hot reload |
+| `npm run build` | Compilación para producción |
+| `npm run preview` | Vista previa del build |
+| `npm run lint` | Análisis estático con ESLint |
+| `npm run typecheck` | Verificación de tipos TypeScript |
+
+---
 
 ## 🌟 Componentes Principales
 
-### 1. StickyNav
-Navegación que aparece al hacer scroll con efecto de desvanecimiento.
+<details>
+<summary><b>StickyNav</b> — Navegación flotante</summary>
+Aparece al hacer scroll con efecto de desvanecimiento. Incluye links a todas las secciones y es totalmente responsive.
+</details>
 
-### 2. HeroSection
-Banner principal con parallax scrolling y animación de entrada.
+<details>
+<summary><b>HeroSection</b> — Banner principal</summary>
+Parallax scrolling con animación de entrada. Establece la identidad visual de la marca desde el primer impacto.
+</details>
 
-### 3. ProductSection
-Catálogo interactivo con selector de tamaños y precios dinámicos.
+<details>
+<summary><b>ProductSection</b> — Catálogo interactivo</summary>
+Selector de tamaños con precios dinámicos. Presenta las variedades Clásico y Reserva.
+</details>
 
-### 4. ProcessSection
-Timeline animado que muestra las 5 etapas del café.
+<details>
+<summary><b>ProcessSection</b> — Timeline del café</summary>
+Animación de 5 etapas que lleva al usuario desde el cultivo hasta la taza.
+</details>
 
-### 5. GallerySection
-Galería filtrable por categorías con lightbox modal.
+<details>
+<summary><b>GallerySection</b> — Galería filtrable</summary>
+Filtros por categoría con lightbox modal para visualizar cada imagen.
+</details>
 
-### 6. PreparationSection
-Guías paso a paso para 5 métodos de preparación.
+<details>
+<summary><b>PreparationSection</b> — Guías de preparación</summary>
+Instrucciones paso a paso para 5 métodos: pour over, prensa francesa, espresso, cold brew y aeropress.
+</details>
+
+---
 
 ## 🚢 Despliegue
 
-### Vercel (Recomendado)
+### ▲ Vercel (Recomendado)
 ```bash
 npm install -g vercel
 vercel --prod
@@ -193,50 +236,54 @@ vercel --prod
 ### Netlify
 ```bash
 npm run build
-# Subir carpeta dist/ a Netlify
+# Arrastra la carpeta dist/ al dashboard de Netlify
 ```
 
 ### GitHub Pages
 ```bash
 npm run build
-# Configurar GitHub Pages para servir desde /docs
+# Configura GitHub Pages para servir desde /dist
 ```
 
-## 🤝 Contribuir
+---
 
-Las contribuciones son bienvenidas. Para cambios importantes:
+## 🤝 Contribuciones
 
-1. Fork el proyecto
-2. Crea una rama para tu feature (`git checkout -b feature/AmazingFeature`)
-3. Commit tus cambios (`git commit -m 'Add: nueva característica'`)
-4. Push a la rama (`git push origin feature/AmazingFeature`)
-5. Abre un Pull Request
+¡Las contribuciones son bienvenidas! Sigue estos pasos:
 
-## 📄 Licencia
+```bash
+git checkout -b feature/nueva-funcionalidad
+git commit -m "feat: descripción del cambio"
+git push origin feature/nueva-funcionalidad
+# Luego abre un Pull Request
+```
 
-Este proyecto está bajo la Licencia MIT. Ver `LICENSE` para más información.
+Usa [Conventional Commits](https://www.conventionalcommits.org/es/v1.0.0/): `feat:`, `fix:`, `docs:`, `style:`, `refactor:`.
 
-## 👥 Autores
-
-- **Tu Nombre** - *Desarrollo inicial* - [Tu GitHub](https://github.com/tu-usuario)
-
-## 🙏 Agradecimientos
-
-- Familia productora de café en Togüí, Boyacá
-- Comunidad de React y TypeScript
-- Lucide Icons por los iconos hermosos
-- Tailwind CSS por el framework de utilidades
+---
 
 ## 📞 Contacto
 
-- **Sitio Web:** [www.cafeelhatillo.com](https://www.cafeelhatillo.com)
-- **Email:** info@cafeelhatillo.com
-- **Instagram:** [@cafeelhatillo](https://instagram.com/cafeelhatillo)
-- **WhatsApp:** +57 300 123 4567
+<div align="center">
+
+| Canal | Info |
+|-------|------|
+| 🌐 Sitio Web | [www.cafeelhatillo.com](https://www.cafeelhatillo.com) |
+| 📧 Email | info@cafeelhatillo.com |
+| 📸 Instagram | [@cafeelhatillo](https://instagram.com/cafeelhatillo) |
+| 💬 WhatsApp | +57 300 123 4567 |
+
+</div>
 
 ---
 
 <div align="center">
-  <p>Hecho con ☕ y ❤️ en Togüí, Boyacá, Colombia</p>
-  <p>© 2025 Café El Hatillo. Todos los derechos reservados.</p>
+  <img src="https://capsule-render.vercel.app/api?type=waving&color=gradient&customColorList=6,11,12&height=120&section=footer" width="100%" />
+
+  <br/>
+
+  Hecho con ☕ y ❤️ en **Togüí, Boyacá, Colombia**
+
+  © 2025 Café El Hatillo · Todos los derechos reservados.
+
 </div>
